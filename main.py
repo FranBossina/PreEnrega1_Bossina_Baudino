@@ -59,8 +59,17 @@ def importarDatos(direccion):
         print(F'Datos de {direccion} importados con exito.')
     except FileNotFoundError:
         print(f'El archivo {direccion} no fue encontrado.')
-
         
+
+
+# Funcion para mostrar usuarios registrados
+def mostrarUsuarios(lugar):
+    print("Usuarios registrados:")
+    for usuario in lugar['usuarios']:
+        print(f"- {usuario['userName']}")
+
+
+
 registro(data)
 registro(data)
 
@@ -71,5 +80,7 @@ importarDatos('datos/base_datos_externos.json')
 guardarDato(data)
 
 importarDatos('datos/base_datos.json')
+
+mostrarUsuarios(data)
 
 login(data)
